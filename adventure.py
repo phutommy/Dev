@@ -85,17 +85,13 @@ title_card = """
 
 """
 
-print(title_card)
+##print(title_card)
+
+player = Hero
 
 adventurer_name = input("What is your name, adventurer? (Alphanumeric characters only, please.)\n");
 
 print("\n\nWelcome to the dungeon, " + adventurer_name + "!")
-
-hero_hp = 10
-
-attack = -1
-
-magic = -1
 
 valid_input_flag = False
 
@@ -130,6 +126,7 @@ prompt = "\nHoly shit a " + str(enemy1.name) + " ambushed you but it's retarted.
 
 while ongoing_battle_flag == True:
   
+  textreader()
 
   attack_type = input()
 
@@ -147,12 +144,12 @@ while ongoing_battle_flag == True:
     prompt = "\nNice magic attack, but the" + str(enemy1) + "still has " + str(enemy1.hp) + " hp! Do another physical (1) or magic (2) attack!\n"
 
   if enemy1.hp > 0:
-    hero_hp = (hero_hp - enemy1.atk)
-    print("\nThe" + str(enemy1) + "attacks! You now have " + str(hero_hp) + " hp!\n")
+    player.hp = (player.hp - enemy1.atk)
+    print("\nThe" + str(enemy1) + "attacks! You now have " + str(player.hp) + " hp!\n")
 
   else:
     prompt = "\n\nPick a VALID attack number, dummie):\n\n(1) physical\n\n(2) magic\n\n"
 
   if enemy1.hp <= 0:  
     print("\ncongrations u beat autismo" + str(enemy1) + "lel\n")
-    print("\nYou currently have " + str(hero_hp) + " hp.\n")
+    print("\nYou currently have " + str(player.hp) + " hp.\n")
